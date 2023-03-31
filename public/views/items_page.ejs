@@ -1,0 +1,31 @@
+<%- include('include/header.ejs') %>
+<!-- Table -->
+<div class="container">
+    <div>
+        <h1 class="text-center m-5">Inventory System</h1>
+    </div>
+    <table id="inventoryTable" class="table table-striped mt-5">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <td>Options</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Item Item</td>
+                <td>
+                    <div class="row justify-content-around">
+                        <div class="col-md-6">
+                            <a href="http://" target="_blank" rel="noopener noreferrer"  class="btn btn-primary">EDIT</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="http://" target="_blank" rel="noopener noreferrer" class="btn btn-danger">DELETE</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<%- include('include/footer.ejs') %>
