@@ -57,7 +57,7 @@ router.post('/user/password/:id', UserController.userChangePassword)
 
 // USERS
 // CREATE USER (REGISTER PAGE) 
-router.get('/register', checkAuth.checkAuth, UserController.createUser)
+router.get('/register', UserController.createUser)
 
 // STORE USER
 router.post('/user/store', UserController.storeUser)
