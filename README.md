@@ -6,6 +6,9 @@ npm install && npm start
 # Enter the URL Below
 http://localhost:3000/inventory/login
 
+# You can test the deployed application with this link
+https://inventory-system-dwna.onrender.com/inventory
+
 # You can login using this credentials
 email - johndoe1@gmail.com <br>
 pass - user1234  
