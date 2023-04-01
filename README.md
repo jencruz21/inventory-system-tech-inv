@@ -9,4 +9,5 @@ pass - user1234
 
 # This is how the processes and logic work for the application
 <img src="inventory-system-flowchart.png">
-# Enjoy!
+
+# Enjoy
