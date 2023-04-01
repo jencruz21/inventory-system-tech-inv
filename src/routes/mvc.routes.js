@@ -101,12 +101,12 @@ router.get('/categories/create', checkAuth.checkAuth, CategoryController.createC
 router.post('/categories/store', CategoryController.storeCategory)
 
 // EDIT CATEGORY
-router.get('/categories/edit/:id', CategoryController.editCategory)
+router.get('/categories/edit/:id', checkAuth.checkAuth, CategoryController.editCategory)
 
 // UPDATE CATEGORY
 router.post('/categories/update/:id', CategoryController.updateCategory)
 
 // DELETE CATEGORY
-router.get('/categories/delete/:id', CategoryController.deleteCategory)
+router.get('/categories/delete/:id', checkAuth.checkAuth, CategoryController.deleteCategory)
 
 module.exports = router
