@@ -7,4 +7,6 @@ npm install && npm start
 email - johndoe1@gmail.com <br>
 pass - user1234  
 
-#Enjoy!
+# This is how the processes and logic work for the application
+<img src="inventory-system-flowchart.png">
+# Enjoy!
