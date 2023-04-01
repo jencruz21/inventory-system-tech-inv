@@ -1,0 +1,39 @@
+<%- include('include/header.ejs') %>
+<div class="container">
+    <div class="col-md mb-5">
+        <h1 class="text-center m-5">
+            Categories
+        </h1>
+        <form method="POST" action="/inventory/categories/store">
+            <div class="form-floating mb-3">
+                <input class="form-control" type="text" name="category_name" id="category_name" placeholder="name" required>
+                <label for="category_name">Create Category</label>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Add Category">
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md m-5">
+        <table id="inventoryTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Category Name</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% categories.forEach(category => { %>
+                    <tr>
+                        <td><%= category.category_name %></td>
+                        <td>
+                            <a class="btn btn-danger" href="/inventory/categories/delete/<%= category._id %>">DELETE</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</div>
+<%- include('include/footer.ejs') %>

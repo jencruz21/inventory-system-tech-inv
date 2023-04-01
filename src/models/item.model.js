@@ -8,6 +8,10 @@ const ItemSchema = new mongoose.Schema({
     category: {
         type: mongoose.Types.ObjectId,
         ref: "categories"
+    }, 
+    price: {
+        type: Number,
+        required: true
     }
 }, {
     timestamps: true

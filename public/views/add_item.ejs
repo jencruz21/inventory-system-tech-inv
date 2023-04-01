@@ -9,15 +9,22 @@
                 <input class="form-control" type="text" name="item_name" id="item_name" placeholder="name" required>
                 <label for="item_name">Item Name</label>
             </div>
-            <div class="form-group mb-3">
-                <select name="category" id="category" class="form-control"></select>
-                <% if (categories) { %>
-                    <% categories.forEach(category => { %>
-                        <option value="<%= category._id %>"><%= category.category_name %></option>
-                    <% }) %>
-                <% } else { %>
-                 
-                <% } %>
+            <div class="form-floating mb-3">
+                <select name="category" id="category" class="form-control">
+                    <option selected disabled>SELECT CATEGORY</option>
+                    <% if (categories) { %>
+                        <% categories.forEach(category => { %>
+                            <option value="<%= category._id %>"><%= category.category_name %></option>
+                        <% }) %>
+                    <% } else { %>
+                    
+                    <% } %>
+                </select>
+                <label for="category">Category</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" type="number" name="price" id="price" required placeholder="price">
+                <label for="price">Price</label>
             </div>
             <div class="form-group">
                 <input class="btn btn-primary" type="submit" value="Add Category">

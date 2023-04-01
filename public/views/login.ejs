@@ -1,3 +1,20 @@
 <%-include('include/header.ejs') %>
-
+    <div class="container">
+        <div class="col-md my-5">
+            <h1 class="text-center my-5">Login</h1>
+            <form action="/inventory/login" method="post">
+                <div class="form-floating mb-3">
+                    <input class="form-control" type="email" name="email" id="email" required placeholder="email">
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" type="password" name="password" id="password" required placeholder="password">
+                    <label for="password">Password</label>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
 <%-include('include/footer.ejs') %>

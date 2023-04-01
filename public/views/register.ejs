@@ -1,3 +1,30 @@
-<%-include('include/header.ejs') %>
-
-<%-include('include/footer.ejs') %>
+<%- include('include/header.ejs') %>
+<div class="container">
+    <div class="col-md">
+        <h1 class="text-center m-5">
+            Register Here!
+        </h1>
+        <form method="POST" action="/inventory/user/store">
+            <div class="form-floating mb-3">
+                <input class="form-control" type="text" name="fname" id="fname" placeholder="first name" required>
+                <label for="fname">First Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" type="text" name="lname" id="lname" placeholder="last name" required>
+                <label for="lname">Last Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" type="email" name="email" id="email" placeholder="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" type="password" name="password" id="password" placeholder="password" required>
+                <label for="password">Password</label>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Register!">
+            </div>
+        </form>
+    </div>
+</div>
+<%- include('include/footer.ejs') %>

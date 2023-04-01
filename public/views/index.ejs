@@ -7,7 +7,7 @@
     <div class="d-flex flex-wrap justify-content-evenly">
         <% if (categories) { %>
             <% categories.forEach(category => { %>
-                <a style="color:black;text-decoration:none" href="/inventory/items/<%= category._id %>">
+                <a style="color:black;text-decoration:none" href="/inventory/items/category/<%= category._id %>">
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-md-4 align-self-center">

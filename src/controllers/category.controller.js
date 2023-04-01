@@ -6,8 +6,15 @@ const CategoryModel = require(path.resolve(__dirname, '../models/category.model'
  * Add Category
  */
 
-exports.createCategory = (req, res) => {
-    return res.status(200).render('add_category')
+exports.createCategory = async (req, res) => {
+    try {
+        const categories = await CategoryModel.find()
+        return res.status(200).render('categories', {
+            categories: categories
+        })
+    } catch (error) {
+        return res.sendStatus(400)
+    }
 }
 
 exports.storeCategory = (req, res) => {
@@ -46,15 +53,14 @@ exports.findAllCategories = async (req, res) => {
     }
 }
 
-exports.deleteCategoryById = async (req, res) => {
+exports.deleteCategory = async (req, res) => {
     const { id } = req.params
     
     try {
-        await CategoryModel.findByIdAndDelete({
-            id
-        })
-        return res.status(200).redirect(`/inventory`)
+        await CategoryModel.findByIdAndDelete(id)
+        return res.status(200).redirect(`/inventory/categories/create`)
     } catch (error) {
+
         return res.sendStatus(400)
     }
 }

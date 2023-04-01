@@ -1,3 +1,20 @@
-<%-include('include/header.ejs') %>
-
-<%-include('include/footer.ejs') %>
+<%- include('include/header.ejs') %>
+<div class="container">
+    <div class="col-md">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="text-start m-5">
+                    User Profile
+                </h1>
+            </div>
+            <div class="col-md-6">
+                <a style="text-decoration: none" href="/inventory/user/edit/<%= user._id %>">
+                    <h5 class="text-end m-5">Edit Profile</h5>
+                </a>
+            </div>
+        </div>
+        <h2>< <%= user.fname %> <%= user.lname %> /></h2>
+        <h3>< <%= user.email %> /></h3>
+    </div>
+</div>
+<%- include('include/footer.ejs') %>
