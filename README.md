@@ -3,6 +3,9 @@
 # Run this Command
 npm install && npm start 
 
+# Enter the URL Below
+http://localhost:3000/inventory/login
+
 # You can login using this credentials
 email - johndoe1@gmail.com <br>
 pass - user1234  
