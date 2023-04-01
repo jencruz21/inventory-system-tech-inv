@@ -28,7 +28,14 @@
                     <tr>
                         <td><%= category.category_name %></td>
                         <td>
-                            <a class="btn btn-danger" href="/inventory/categories/delete/<%= category._id %>">DELETE</a>
+                            <div class="row justify-content-around">
+                                <div class="col-md-6">
+                                    <a class="btn btn-success" href="/inventory/categories/edit/<%= category._id %>">EDIT</a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a class="btn btn-danger" href="/inventory/categories/delete/<%= category._id %>">DELETE</a>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 <% }) %>

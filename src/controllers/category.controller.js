@@ -64,3 +64,38 @@ exports.deleteCategory = async (req, res) => {
         return res.sendStatus(400)
     }
 }
+
+exports.editCategory = async (req, res) => {
+    const { id } = req.params
+    try {
+        const category = await CategoryModel.findById(id)
+        return res.status(200).render('edit_category', {
+            category: category
+        })
+    } catch (error) {
+        return res.sendStatus(400)
+    }
+}
+
+exports.updateCategory = async (req, res) => {
+    const { id } = req.params
+
+    const categoryValidation = joi.object({
+        category_name: joi.string().required()
+    })
+
+    const { error, value } = categoryValidation.validate(req.body)
+
+    if (error) {
+        return res.sendStatus(400)
+    }
+
+    try {
+        await CategoryModel.findByIdAndUpdate(id, {
+            category_name: value.category_name
+        })
+        return res.status(200).redirect('/inventory/categories/create')
+    } catch (error) {
+        return res.sendStatus(400)
+    }
+}
