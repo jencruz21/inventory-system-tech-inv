@@ -124,7 +124,7 @@ exports.userChangePassword = async (req, res) => {
             return res.status(200).redirect(`/inventory/user/show/${id}`)
         } else {
             req.flash('error', 'current password does not match with your previous one')
-            return res.status(400).redirect(`/inventor/user/password/${id}`)
+            return res.status(400).redirect(`/inventory/user/password/${id}`)
         }
 
     } catch (error) {
