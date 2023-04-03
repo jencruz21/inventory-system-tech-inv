@@ -106,6 +106,12 @@ exports.userChangePassword = async (req, res) => {
         return res.sendStatus(400)
     }
 
+    if (value.current !== value.new) {
+        return res.status(400).send({
+            message: 'Password does not match with your new'
+        })
+    }
+
     try {
         const user = await UserModel.findById(id)
         const current_password = bcrypt.hashSync(value.current, 10)
