@@ -15,6 +15,7 @@ const UserController = require(path.resolve(__dirname, '../controllers/user.cont
 
 // MIDDLEWARES
 const checkAuth = require(path.resolve(__dirname, '../middlewares/check.auth.middleware'))
+const userLocals = require(path.resolve(__dirname, '../middlewares/user.locals.middleware'))
 
 initialize(passport)
 
@@ -27,6 +28,7 @@ router.use(session({
 
 router.use(passport.authenticate('session'))
 router.use(cookieParser())
+router.use(userLocals.userLocals)
 
 // LOGIN
 // LOGIN USER
