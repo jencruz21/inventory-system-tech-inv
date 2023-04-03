@@ -4,6 +4,7 @@ const router = express.Router()
 const passport = require('passport')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
+const flash = require('express-flash')
 const initialize = require(path.resolve(__dirname, '../config/passport.config'))
 
 require('dotenv').config()
@@ -28,6 +29,7 @@ router.use(session({
 
 router.use(passport.authenticate('session'))
 router.use(cookieParser())
+router.use(flash())
 router.use(userLocals.userLocals)
 
 // LOGIN

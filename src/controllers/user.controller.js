@@ -107,9 +107,8 @@ exports.userChangePassword = async (req, res) => {
     }
 
     if (value.current !== value.new) {
-        return res.status(400).send({
-            message: 'Password does not match with your new'
-        })
+        req.flash('error', 'Password does not match with your new')
+        return res.status(400).redirect(`/inventor/user/password/${id}`)
     }
 
     try {
@@ -124,9 +123,8 @@ exports.userChangePassword = async (req, res) => {
 
             return res.status(200).redirect(`/inventory/user/show/${id}`)
         } else {
-            return res.status(400).send({
-                error: 'current password does not match with your previous one'
-            })
+            req.flash('error', 'current password does not match with your previous one')
+            return res.status(400).redirect(`/inventor/user/password/${id}`)
         }
 
     } catch (error) {
